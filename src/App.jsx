@@ -1,16 +1,4 @@
-// src/App.jsx (임시 테스트)
-import React from 'react';
-
-export default function App() {
-  return (
-    <div style={{padding:40}}>
-      <h1>앱 렌더 테스트 — 성공!</h1>
-      <p>이 문구가 보이면 React 자체는 정상입니다.</p>
-    </div>
-  );
-}
-
-/*// src/App.jsx
+// src/App.jsx
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
@@ -36,4 +24,3 @@ export default function App() {
     </>
   );
 }
-*/
