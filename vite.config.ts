@@ -5,8 +5,8 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [
-    react(),          // 핵심: 이제 일반 리액트 앱으로 동작합니다.
-    tailwindcss(),    // 디자인(Tailwind) 유지
-    tsconfigPaths(),  // 경로 설정 유지
+    react(),          // 리액트 필수
+    tailwindcss(),    // 디자인 유지 (지우면 안됨!)
+    tsconfigPaths(),  // 경로 설정 유지 (지우면 안됨!)
   ],
 });
