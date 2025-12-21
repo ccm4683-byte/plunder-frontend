@@ -39,6 +39,11 @@ export default function Signup() {
       return;
     }
 
+    const payload = {
+      ...formData,
+      name: formData.email.split('@')[0] // 예: test@abc.com -> 이름은 'test'가 됨
+    };
+
     try {
       await axios.post('https://plunder-backend.onrender.com/api/auth/signup', formData);
       alert('회원가입 성공! 로그인 해주세요.');
