@@ -22,7 +22,7 @@ export default function ProductEdit() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:4000/api/products/${id}`);
+        const res = await axios.get(`https://plunder-backend.onrender.com/api/products/${id}`);
         const p = res.data;
         
         setFormData({
@@ -63,7 +63,7 @@ export default function ProductEdit() {
 
     try {
       // headers에 'Content-Type': 'application/json' 확인
-      await axios.put(`http://localhost:4000/api/products/${id}`, updateData, {
+      await axios.put(`https://plunder-backend.onrender.com/api/products/${id}`, updateData, {
         headers: { 
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}` 

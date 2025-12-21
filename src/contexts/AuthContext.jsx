@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
       if (storedToken) {
         try {
           // 백엔드에 "이 토큰 누구 거야?" 물어보기
-          const res = await axios.get('http://localhost:4000/api/auth/me', {
+          const res = await axios.get('https://plunder-backend.onrender.com/api/auth/me', {
             headers: { Authorization: `Bearer ${storedToken}` }
           });
           setUser(res.data); // 유저 정보 복구 성공!
@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }) => {
   // 2. 로그인 함수
   const login = async (email, password) => {
     try {
-      const res = await axios.post('http://localhost:4000/api/auth/login', { email, password });
+      const res = await axios.post('https://plunder-backend.onrender.com/api/auth/login', { email, password });
       const { token, user } = res.data;
       
       // 저장 및 상태 업데이트

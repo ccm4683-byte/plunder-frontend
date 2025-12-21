@@ -17,7 +17,7 @@ export default function GameController() {
 
   const fetchTeamStats = async () => {
     try {
-      const res = await axios.get('http://localhost:4000/api/teams');
+      const res = await axios.get('https://plunder-backend.onrender.com/api/teams');
       // 배열을 객체로 변환 { "T1": 3, "Gen.G": 0 ... } 형태
       const stats = {};
       res.data.forEach(t => {
@@ -31,7 +31,7 @@ export default function GameController() {
 
   const handleMatch = async (teamName, result) => {
     try {
-      await axios.post('http://localhost:4000/api/teams/match', {
+      await axios.post('https://plunder-backend.onrender.com/api/teams/match', {
         name: teamName,
         result: result
       });

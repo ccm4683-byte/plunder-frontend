@@ -26,7 +26,7 @@ export default function ProductList() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get('http://localhost:4000/api/products');
+      const res = await axios.get('https://plunder-backend.onrender.com/api/products');
       setProducts(res.data);
     } catch (err) {
       console.error(err);
@@ -36,7 +36,7 @@ export default function ProductList() {
   const fetchTeamStatus = async (teamName) => {
     try {
       const safeName = encodeURIComponent(teamName);
-      const res = await axios.get(`http://localhost:4000/api/teams/${safeName}`);
+      const res = await axios.get(`https://plunder-backend.onrender.com/api/teams/${safeName}`);
       setTeamStatus(res.data);
     } catch (err) {
       console.error("팀 정보 로딩 실패");
@@ -69,7 +69,7 @@ export default function ProductList() {
     if (!confirmBuy) return;
 
     try {
-      await axios.post('http://localhost:4000/api/products/buy', {
+      await axios.post('https://plunder-backend.onrender.com/api/products/buy', {
         productId: product._id,
         productName: product.name || product.title,
         price: finalPrice

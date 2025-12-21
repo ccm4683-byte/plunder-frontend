@@ -40,7 +40,7 @@ export default function Signup() {
     }
 
     try {
-      await axios.post('http://localhost:4000/api/auth/signup', formData);
+      await axios.post('https://plunder-backend.onrender.com/api/auth/signup', formData);
       alert('회원가입 성공! 로그인 해주세요.');
       navigate('/login'); 
     } catch (err) {

@@ -26,7 +26,7 @@ export default function ProductCreate() {
       const token = localStorage.getItem('token'); 
       
       // 데이터 전송 (여기서 category는 이제 안 보냄)
-      await axios.post('http://localhost:4000/api/products', formData, {
+      await axios.post('https://plunder-backend.onrender.com/api/products', formData, {
         headers: { 
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}` 

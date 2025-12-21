@@ -22,7 +22,7 @@ export default function MyProducts() {
   // 1. 내 상품 목록 가져오기
   const fetchMyProducts = async () => {
     try {
-      const res = await axios.get('http://localhost:4000/api/products/mine', {
+      const res = await axios.get('https://plunder-backend.onrender.com/api/products/mine', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setProducts(res.data);
@@ -34,7 +34,7 @@ export default function MyProducts() {
   // 2. 판매 통계 데이터 가져오기
   const fetchAnalytics = async () => {
     try {
-      const res = await axios.get('http://localhost:4000/api/products/stats/analytics', {
+      const res = await axios.get('https://plunder-backend.onrender.com/api/products/stats/analytics', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setStats(res.data);
@@ -46,7 +46,7 @@ export default function MyProducts() {
   const handleDelete = async (id) => {
     if (!window.confirm("정말 삭제하시겠습니까?")) return;
     try {
-      await axios.delete(`http://localhost:4000/api/products/${id}`, {
+      await axios.delete(`https://plunder-backend.onrender.com/api/products/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert("삭제되었습니다.");
